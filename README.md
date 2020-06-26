@@ -2,12 +2,10 @@
 
 # chocolate-factory
 
-This Clojure project is a calculator API for a chocolate factory line.
-
 It has two operations:
 
 - adding a new wall on the line.
-- quering the number of hard chocolate units the factory line has at the moment.
+- querying the number of hard chocolate units the factory line has at the moment.
 
 The -main is on src/core.clj and tests are on test/core_test.clj
 
@@ -23,7 +21,7 @@ The adding operation updates the walls ref with the new wall height
 ## Installation
 
 To run the program you must have Clojure and it's dependencies installed. 
-For more information on intalling Clojure see the documentation on 
+For more information on installing Clojure see the documentation on 
 https://clojure.org/index
 
 ## Build
@@ -60,12 +58,9 @@ https://clojure.org/index
     
 ## Complexity
 
-For the GET operation the "compute" function is called passing the curent wall list, 
-having the time compexity of O(n) (n is the number of walls) and space complexity of O(n) 
-because uses suport vectors of size n. However not all calls to GET has this complexity. This was achived
-using cache (clojure.core.memoize), then between POST calls the complaxity is O(1) time and O(1) space.
+For the GET operation, the "compute" function is called passing the current wall list, having the time complexity of O(n) (n is the number of walls) and space complexity of O(n) because it uses support vectors of size n. However, not all calls to GET has this complexity. This was achieved using cache (clojure.core.memoize), then between POST calls the complexity is O(1) time and O(1) space.
 
-The Post has time complexity of O(1) and space complexity of O(1)
+The Post has a time complexity of O(1) and space complexity of O(1)
 
 ## License
 
