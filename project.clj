@@ -5,8 +5,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                 [ring "1.7.1"]
-                [compojure "1.6.1"]
-                [org.clojure/core.memoize "1.0.236"]]
+                [ring-mock "0.1.5"]
+                [compojure "1.6.1"]]
   :main ^:skip-aot chocolate-factory.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

@@ -9,7 +9,16 @@ It has two operations:
 - adding a new wall on the line.
 - quering the number of hard chocolate units the factory line has at the moment.
 
-the -main is on src/core.clj and tests are on test/core_test.clj
+The -main is on src/core.clj and tests are on test/core_test.clj
+
+To calculate the chocolate units the function compute works as follow:
+
+- pre-compute the highest wall on the left (m-left) for each wall
+- pre-compute the highest wall on the right (m-right) for each wall
+- for each wall apply the function: units = min(max-left, max-right) - wall-height
+- then sum all the units together
+
+The adding operation updates the walls ref with the new wall height
 
 ## Installation
 
