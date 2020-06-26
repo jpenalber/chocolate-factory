@@ -19,53 +19,53 @@
 
 
 (deftest api-test
-  (testing "Test GET request to /hello?name={a-name} returns expected response"
-    (let [response (my-routes (-> (mock/request :get  "/query")))
+  (testing "Test the API"
+    (let [response (my-routes (mock/request :get  "/query"))
           body     (parse-int (:body response))]
       (is (= (:status response) 200))
       (is (= body 0)))
       
-    (let [response (my-routes (-> (mock/request :post  "/wall/2")))
+    (let [response (my-routes (mock/request :post  "/wall/2"))
           body     (:body response)]
       (is (= (:status response) 200))
       (is (= body "OK")))
 
-    (let [response (my-routes (-> (mock/request :post  "/wall/0")))
+    (let [response (my-routes (mock/request :post  "/wall/0"))
           body     (:body response)]
       (is (= (:status response) 200))
       (is (= body "OK")))
 
-    (let [response (my-routes (-> (mock/request :post  "/wall/2")))
+    (let [response (my-routes (mock/request :post  "/wall/2"))
           body     (:body response)]
       (is (= (:status response) 200))
       (is (= body "OK")))
       
-    (let [response (my-routes (-> (mock/request :get  "/query")))
+    (let [response (my-routes (mock/request :get  "/query"))
           body     (parse-int (:body response))]
       (is (= (:status response) 200))
       (is (= body 2)))
       
-    (let [response (my-routes (-> (mock/request :post  "/wall/2rd")))
+    (let [response (my-routes (mock/request :post  "/wall/2rd"))
           body     (:body response)]
       (is (= (:status response) 404))
       (is (= body "Error")))
       
-    (let [response (my-routes (-> (mock/request :get  "/query")))
+    (let [response (my-routes (mock/request :get  "/query"))
           body     (parse-int (:body response))]
       (is (= (:status response) 200))
       (is (= body 2)))
       
-    (let [response (my-routes (-> (mock/request :post  "/wall/0")))
+    (let [response (my-routes (mock/request :post  "/wall/0"))
         body     (:body response)]
       (is (= (:status response) 200))
       (is (= body "OK")))
 
-    (let [response (my-routes (-> (mock/request :post  "/wall/2")))
+    (let [response (my-routes (mock/request :post  "/wall/2"))
           body     (:body response)]
       (is (= (:status response) 200))
       (is (= body "OK")))
       
-    (let [response (my-routes (-> (mock/request :get  "/query")))
+    (let [response (my-routes (mock/request :get  "/query"))
           body     (parse-int (:body response))]
       (is (= (:status response) 200))
       (is (= body 4)))))
