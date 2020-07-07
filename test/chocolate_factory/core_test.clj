@@ -1,6 +1,8 @@
 (ns chocolate-factory.core-test
   (:require [clojure.test :refer :all]
-            [chocolate-factory.core :refer :all]
+            [chocolate-factory.common :refer [parse-int]]
+            [chocolate-factory.factory :refer [compute]]
+            [chocolate-factory.routes :refer [my-routes]]
             [ring.mock.request :as mock]))
 
 (deftest compute-test
