@@ -18,6 +18,13 @@ To calculate the chocolate units the function compute works as follow:
 
 The adding operation updates the walls ref with the new wall height
 
+
+## Running with clj command-line
+
+```
+$ clj -Sdeps '{:deps {chocolate-factory/chocolate-factory {:git/url "https://github.com/jpenalber/chocolate-factory" :sha "TBD"}}}' -m chocolate-factory.core
+```
+
 ## Installation
 
 To run the program you must have Clojure and it's dependencies installed. 
